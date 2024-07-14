@@ -1,0 +1,74 @@
+{% extends "inicio/Encabezado.html"%}
+<title> {% block titulo %}formulario {% endblock%}</title>
+{% block imagen%}
+{% load static%}
+{% static 'inicio/css/images/registro.png'%}
+
+
+{% endblock%}
+
+
+{% block contenido%}
+    
+
+		<!-- Contenido Principal-->
+        <div class="page-content">
+
+			
+
+
+			<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Cursos
+				    <small></small></h3>
+				</div>
+
+				
+				
+			</div>
+		
+<form class="form-horizontal" action=" {% url "Editar" comentario.id%}" method="POST" role="form">
+
+
+    {% csrf_token %} 
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			 <div class="panel panel-default">
+	                <div class="panel-body">
+						<p>Nombre:<input type="text" name="usuario"></p>
+						<p>Mensaje: </p><p><textarea name="mensaje" type="text"  cols="50" row="10">{{comentario.mensaje}} </textarea></p>
+						
+                        <div class="form-actions text-right">
+                        	<input type="submit" value={{comentario.usuario}} class="btn btn-primary">
+                        </div>
+
+                        <div class ="callout callout-danger fade in">
+                            <h5>Eliminando Comentario </h5>  
+                            <p>Esta seguro de que deseas <strong> Reenviar </strong> El comentario seleccionado</p>  
+                            <!--Alerta-->
+                            </div>
+                            <button type="submit" class="btn btn-danger"> si </button>
+                            <a href="{% url 'comentario'%}" class='btn byn-primary'> Cancelar</a>
+
+				    </div>
+				</div>
+			
+			
+			
+		</div>
+	</div>
+
+</form>
+			
+		
+
+{% endblock%}
+
+
+
+
+		
+		
+

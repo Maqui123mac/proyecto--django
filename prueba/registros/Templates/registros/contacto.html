@@ -1,0 +1,63 @@
+
+{% extends "inicio/Encabezado.html" %}
+<title> {% block titulo %}contacto  {% endblock%}</title>
+
+{% block imagen%}
+{% load static%}
+{% static 'inicio/css/images/contacto.png'%}
+{% endblock%}
+
+{% block contenido%}
+    
+
+		<!-- Contenido Principal-->
+        <div class="page-content">
+
+			
+
+
+			<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Cursos
+				    <small></small></h3>
+				</div>
+
+				
+				
+			</div>
+		
+<form class="form-horizontal" action=" {% url "registrar"%}" method="POST" role="form">
+
+
+    {% csrf_token %} 
+	
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			 <div class="panel panel-default">
+	                <div class="panel-body">
+						<p> Nombre:<input type="text" name="usuario"></p>
+						
+						<p>Mensaje: </p><p><textarea name="mensaje" cols="50" row="10"> </textarea></p>
+						
+                        <div class="form-actions text-right">
+                        	<input type="submit" value="Enviar" class="btn btn-primary">
+                        </div>
+
+				    </div>
+				</div>
+			
+			
+			
+		</div>
+	</div>
+
+</form>
+			
+		
+
+{% endblock%}
+
+
+
